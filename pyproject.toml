@@ -1,0 +1,17 @@
+[project]
+name = "gross_to_net"
+version = "0.1.0"
+description = "Salary converter from GROSS to NET"
+authors = [
+  { name = "Tung Lam" }
+]
+requires-python = ">=3.11"
+dependencies = [
+  "pytest",
+  "streamlit",
+  "pandas"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
