@@ -9,13 +9,13 @@ on:
 jobs:
   test:
     name: Run Unit test
-    run-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
       
     - name: Set up Python
-      uses: actions/setup-python
+      uses: actions/setup-python@v4
       with:
         python-version: "3.11"
 
