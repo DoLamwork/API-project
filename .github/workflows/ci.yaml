@@ -27,6 +27,8 @@ jobs:
     - name: Install dependencies with uv
       run: |
         uv sync
+        pip install pytest  # Cài pytest nếu chưa cài
+
       
     - name: Run Unit test
       run: |
