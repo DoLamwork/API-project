@@ -19,17 +19,19 @@ jobs:
       with:
         python-version: "3.11"
 
-    - name: Instal uv
+    - name: Install uv
       run: |
-        curl -Ls https://astral.sh/uv/install.sh | sh
-        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+        curl -Ls https://astral.sh/uv/install.sh | bash
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Install dependencies with uv
       run: |
         uv sync
-        pip install pytest  # Cài pytest nếu chưa cài
+        pip install pytest  # Cài pytest nếu chưa có
 
-      
+    - name: Set PYTHONPATH to include the root of the project
+      run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+
     - name: Run Unit test
       run: |
         pytest tests/
