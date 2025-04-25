@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/streamlit.dockerfile
+    ports:
+      - "8501:8501"
+
+  # Bỏ comment phần này nếu bạn có backend FastAPI
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/net.dockerfile
+  #   ports:
+  #     - "8000:8000"
